@@ -17,6 +17,8 @@ def test_eight_components():
     text_box = driver.find_element(by=By.NAME, value="my-text")
     submit_button = driver.find_element(by=By.CSS_SELECTOR, value="button")
 
+    driver.find_element(by=By.CssSelector("body")).sendKeys());
+
     text_box.send_keys("Selenium")
     submit_button.click()
 
