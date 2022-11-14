@@ -83,3 +83,10 @@ def test_libLocation():
     assert back_button_txt == "Back to NLB";
 
     driver.quit()
+
+def test_libLocation():
+    driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+    
+    driver.get("https://www.nlb.gov.sg/main/home")
+
+    driver.quit()
