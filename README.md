@@ -6,8 +6,8 @@
 
 
 # Flow for clonning & pushing
-    1. Kevin Clone
-    2. 
-    3.
-    4.
-    5.
+    1. Create a new branch to write your test case
+    2. Branch name convention <student name>
+    3. Write your code when complete push to github
+    4. Create a pull request to merge code back to main branch
+    5. Pull request will need to be approved by either Elgin or Kevin.
