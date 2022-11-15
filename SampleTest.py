@@ -24,6 +24,9 @@ def test_eight_components():
 
     message = driver.find_element(by=By.ID, value="message")
     value = message.text
+    title2 = driver.title
     assert value == "Received!"
+    assert title2 == "Web form - target page"
+    
 
     driver.quit()
