@@ -1,12 +1,13 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.chrome.service import Service as ChromeService
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 from random import randint
 
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
-def test_libLocation():
+
+def test_FeedbackForm():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
     
     driver.get("https://www.nlb.gov.sg/main/home")
@@ -189,3 +190,27 @@ def test_SociaMediaLink():
     driver.implicitly_wait(1);
 
     driver.quit()
+
+def test_libLocation():
+    driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+    
+    driver.get("https://www.nlb.gov.sg/main/home")
+    
+    # Locate library location dropdown
+    libDropDown = driver.find_element(by=By.ID, value = "select-lib-button")
+    libDropDown.click()
+
+    # Select element with xpath to locate the exact are you wish to select
+    libSelect = driver.find_element(by=By.XPATH, value="/html/body/div[2]/div/section[2]/div/div/div[1]/div/div/h3/div[1]/div/ul/li[23]/a")
+    libSelect.click()
+    
+
+    locationForm = driver.find_element(by=By.CLASS_NAME, value = "buttonLibrary")
+    locationForm.click()
+
+    # Check page title to see if page has been changed
+    libTitle = driver.title
+    assert libTitle == "Sengkang Public Library"
+
+    driver.quit()
+
