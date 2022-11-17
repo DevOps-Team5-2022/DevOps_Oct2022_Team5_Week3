@@ -84,7 +84,7 @@ def test_libLocation():
 
     driver.quit()
 
-def test_libLocation():
+def test_SociaMediaLink():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
     
     driver.get("https://www.nlb.gov.sg/main/home")
