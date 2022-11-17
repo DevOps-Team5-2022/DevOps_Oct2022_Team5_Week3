@@ -33,6 +33,10 @@ def test_libLocation():
     # waits 1s
     driver.implicitly_wait(1);
 
+    # Check that its at NLB Home Page
+    title = driver.title
+    assert title == "Home"
+
 
 
     # --- Social Link 2 ---
@@ -50,6 +54,10 @@ def test_libLocation():
     # waits 1s
     driver.implicitly_wait(1);
 
+    # Check that its at NLB Home Page
+    title = driver.title
+    assert title == "Home"
+
 
 
     # --- Social Link 3 ---
@@ -66,6 +74,10 @@ def test_libLocation():
 
     # waits 1s
     driver.implicitly_wait(1);
+
+    # Check that its at NLB Home Page
+    title = driver.title
+    assert title == "Home"
 
 
 
