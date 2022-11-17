@@ -7,6 +7,36 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 
 
+def test_SearchLoadSpeed():
+    driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
+    
+    driver.get("https://www.nlb.gov.sg/main/home")
+
+    # Check that its at NLB Home Page
+    title = driver.title
+    assert title == "Home"
+
+    # waits 0.5s if elements are not immediately present before searching
+    driver.implicitly_wait(0.5)
+
+    # fill in search textfield
+    search_input = driver.find_element(by=By.ID, value = "searchBox")
+    search_input.send_keys("C for dummies");
+
+    #go button
+    go_button = driver.find_element(by=By.CLASS_NAME, value = "btn-primary");
+    go_button.click();
+
+    # wait 10 second and test if the page loaded
+    time.sleep(10);
+
+    # check if page is loaded
+    driver.switch_to.window(driver.window_handles[1]);
+    search_title = driver.title
+    assert search_title == "OneSearch – Find book from libraries, archives and museums."
+
+    driver.quit()
+
 def test_FeedbackForm():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
     
