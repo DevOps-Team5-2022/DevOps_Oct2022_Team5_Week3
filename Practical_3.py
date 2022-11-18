@@ -244,7 +244,7 @@ def test_libLocation():
 
     driver.quit()
 
-def testSubscribe():
+def test_Subscribe():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
     driver.get("https://www.nlb.gov.sg/main/home")
 
