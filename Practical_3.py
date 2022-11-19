@@ -150,7 +150,7 @@ def test_SociaMediaLink():
 
     # --- Social Link 2 ---
     # search and click the Facebook button
-    social_media_link = driver.find_element(by=By.CLASS_NAME, value="fa-facebook");
+    social_media_link = driver.find_element(by=By.CLASS_NAME, value="fa-facebook-square");
     social_media_link.click();
 
     # waits 1s
@@ -204,22 +204,22 @@ def test_SociaMediaLink():
 
 
 
-    # --- Social Link 4 ---
-    # search and click the Twitter button
-    social_media_link = driver.find_element(by=By.CLASS_NAME, value="fa-twitter");
-    social_media_link.click();
+    # # --- Social Link 5 ---
+    # # search and click the Twitter button - There is no Twitter button, Where did you get it Samuel?
+    # social_media_link = driver.find_element(by=By.CLASS_NAME, value="fa-twitter");
+    # social_media_link.click();
 
-    # waits 1s
-    driver.implicitly_wait(1);
+    # # waits 1s
+    # driver.implicitly_wait(1);
 
-    # return back to the NLB Website once the twitter website has loaded
-    if driver.current_url == "https://twitter.com/nlbsingapore":
-        driver.back()
+    # # return back to the NLB Website once the twitter website has loaded
+    # if driver.current_url == "https://twitter.com/nlbsingapore":
+    #     driver.back()
 
-    # waits 1s
-    driver.implicitly_wait(1);
+    # # waits 1s
+    # driver.implicitly_wait(1);
 
-    driver.quit()
+    # driver.quit()
 
 def test_libLocation():
     driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()))
